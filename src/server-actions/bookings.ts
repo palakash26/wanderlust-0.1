@@ -22,24 +22,16 @@ export const CheckRoomAvailability = async ({
   reqCheckOutDate: string;
 }) => {
   try {
-       // Get the current date in 'YYYY-MM-DD' format
-       const currentDate = new Date().toISOString().split("T")[0];
+    // Get the current date in 'YYYY-MM-DD' format
+    const currentDate = new Date().toISOString().split("T")[0];
 
-       // Check if the requested check-in date is in the past
-       if (new Date(reqCheckInDate) < new Date(currentDate)) {
-         return {
-           success: false,
-           message: "Check-in date cannot be in the past.",
-         };
-       }
-   
-       // Check if the requested check-out date is in the past
-       if (new Date(reqCheckOutDate) < new Date(currentDate)) {
-         return {
-           success: false,
-           message: "Check-out date cannot be in the past.",
-         };
-       }
+    // Ensure requested check-in date is not in the past
+    if (reqCheckInDate < currentDate) {
+      return {
+        success: false,
+        message: "Check-in date cannot be in the past.",
+      };
+    }
     const bookedSlot = await BookingModel.findOne({
       room: roomId,
       bookingStatus: "Booked",
@@ -151,20 +143,24 @@ export const GetAvailabeRooms = async ({
   type: string;
 }) => {
   try {
-// if checkIn date or checkout date is not valid return data only with type filter
-  if(!reqCheckInDate || !reqCheckOutDate){
-    
-    const rooms = await RoomModel.find({
-      ...(type && {type}),
-    })
+    // if checkIn date or checkout date is not valid return data only with type filter
+    if (!reqCheckInDate || !reqCheckOutDate) {
+      const rooms = await RoomModel.find({
+        ...(type && { type }),
+      });
 
-    return{
-      success:true,
-      data:JSON.parse(JSON.stringify(rooms))
-    };
-  }
+      return {
+        success: true,
+        data: JSON.parse(JSON.stringify(rooms)),
+      };
+    }
 
-    console.log("CheckInDate:", reqCheckInDate, "CheckOutDate:", reqCheckOutDate);
+    console.log(
+      "CheckInDate:",
+      reqCheckInDate,
+      "CheckOutDate:",
+      reqCheckOutDate
+    );
     // first get all the rooms which are booked in the given date range
     const bookedSlots = await BookingModel.find({
       bookingStatus: "Booked",
@@ -190,18 +186,18 @@ export const GetAvailabeRooms = async ({
       ],
     });
     console.log("Booked Slots:", bookedSlots);
-    const bookedRoomIds = bookedSlots.map((slot)=>slot.room);
+    const bookedRoomIds = bookedSlots.map((slot) => slot.room);
 
     // get all the rooms by excluding the booked rooms
 
     const rooms = await RoomModel.find({
-      _id:{$nin:bookedRoomIds},
-      ...(type && {type}),
+      _id: { $nin: bookedRoomIds },
+      ...(type && { type }),
     });
 
-    return{
-      success:true,
-      data:JSON.parse(JSON.stringify(rooms))
+    return {
+      success: true,
+      data: JSON.parse(JSON.stringify(rooms)),
     };
   } catch (error: any) {
     return {
@@ -210,7 +206,6 @@ export const GetAvailabeRooms = async ({
     };
   }
 };
-
 
 // export const GetAvailabeRooms = async ({
 //   reqCheckInDate,
@@ -234,7 +229,6 @@ export const GetAvailabeRooms = async ({
 //       });
 //       return { success: true, data: JSON.parse(JSON.stringify(rooms)) };
 //     }
-
 
 //     const checkInDate = convertToISODate(reqCheckInDate);
 //     const checkOutDate = convertToISODate(reqCheckOutDate);
@@ -277,5 +271,3 @@ export const GetAvailabeRooms = async ({
 //     return { success: false, message: error.message };
 //   }
 // };
-
-
