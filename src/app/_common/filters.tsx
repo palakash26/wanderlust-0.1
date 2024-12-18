@@ -10,6 +10,10 @@ function Filters({ searchParams }: { searchParams: any }) {
   const [type, setType] = React.useState(searchParams.type || "");
   const router = useRouter();
 
+
+    // Get today's date in YYYY-MM-DD format
+    const currentDate = new Date().toISOString().split("T")[0];
+
   const onSearch = () => {
     const newSearchParamsObject = { ...searchParams, checkIn, checkOut, type };
     const newSearchParams = new URLSearchParams(
@@ -35,6 +39,7 @@ function Filters({ searchParams }: { searchParams: any }) {
           placeholder="Check-in"
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={checkIn}
+          min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
           onChange={(e) => setCheckIn(e.target.value)}
         />
       </div>
