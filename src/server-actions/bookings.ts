@@ -22,6 +22,24 @@ export const CheckRoomAvailability = async ({
   reqCheckOutDate: string;
 }) => {
   try {
+       // Get the current date in 'YYYY-MM-DD' format
+       const currentDate = new Date().toISOString().split("T")[0];
+
+       // Check if the requested check-in date is in the past
+       if (new Date(reqCheckInDate) < new Date(currentDate)) {
+         return {
+           success: false,
+           message: "Check-in date cannot be in the past.",
+         };
+       }
+   
+       // Check if the requested check-out date is in the past
+       if (new Date(reqCheckOutDate) < new Date(currentDate)) {
+         return {
+           success: false,
+           message: "Check-out date cannot be in the past.",
+         };
+       }
     const bookedSlot = await BookingModel.findOne({
       room: roomId,
       bookingStatus: "Booked",
