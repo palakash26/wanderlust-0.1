@@ -3,13 +3,16 @@ import React from "react";
 import ProjectTitle from "./project-title";
 import { Button } from "antd";
 import UserInfo from "./user-info";
+import Link from "next/link";
 
 function Header({ loggedInUserData }: { loggedInUserData: UserType | null }) {
   if (!loggedInUserData) {
     return (
       <div className="flex justify-center items-center">
         <ProjectTitle />
-        <Button type="link">Sign In</Button>
+        <Link href="/sign-in">
+          <Button type="link">Sign In</Button>
+        </Link>
       </div>
     );
   }
