@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* background-image: url(/background.jpg); */
+}
+
+.auth-container {
+  background-color: aliceblue;
+  height: 118vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-only {
+  height: 100vh;
+}
+
+/* Add this to your global CSS file or component CSS module */
+.cl-internal-1dauvpw,
+.cl-internal-1hp5nqm,
+.ant-layout-header {
+  display: none;
+}
+
+.cl-formButtonPrimary {
+  background-color: rgb(1, 57, 57);
+  border: #024141;
+}
+:hover.cl-formButtonPrimary {
+  background-color: #008080;
+}
+
+.ant-form-item {
+  margin-bottom: 0px !important;
+}
+
+.ant-form-item-label {
+  padding: 0px !important;
+}
+
+table {
+  margin-top: 10px;
+  border: 1px solid rgb(189, 189, 189);
+}
+
+.room-card:hover img {
+  transform: scale(1.1);
+  transition: transform 0.5s;
+}
+.room-card img,.room-card {
+  overflow: hidden;
+}
