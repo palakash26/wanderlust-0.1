@@ -1,5 +1,6 @@
 'use client'
 import { Button } from 'antd';
+import dayjs from 'dayjs';
 import { FilterX, Search } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import React from 'react'
@@ -35,7 +36,8 @@ const currentDate = new Date().toISOString().split("T")[0];
           placeholder="Check-in"
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={startDate}
-          min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
+          min={dayjs().format("YYYY-MM-DD")}
+          // min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
           onChange={(e) => setStartDate(e.target.value)}
         />
       </div>
@@ -48,7 +50,8 @@ const currentDate = new Date().toISOString().split("T")[0];
           placeholder="Check-out"
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={endDate}
-          min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
+          min={dayjs().format("YYYY-MM-DD")}
+          // min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
           onChange={(e) => setEndDate(e.target.value)}
         />
       </div>

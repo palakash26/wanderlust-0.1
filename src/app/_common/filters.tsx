@@ -3,6 +3,7 @@ import { Button } from "antd";
 import { FilterX, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
+import dayjs from "dayjs";
 
 function Filters({ searchParams }: { searchParams: any }) {
   const [checkIn, setCheckIn] = React.useState(searchParams.checkIn || "");
@@ -39,7 +40,8 @@ function Filters({ searchParams }: { searchParams: any }) {
           placeholder="Check-in"
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={checkIn}
-          min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
+          min={dayjs().format("YYYY-MM-DD")}
+          // min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
           // max={currentDate} // Restrict to current date
           onChange={(e) => setCheckIn(e.target.value)}
         />
@@ -53,7 +55,8 @@ function Filters({ searchParams }: { searchParams: any }) {
           placeholder="Check-out"
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={checkOut}
-          min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
+          min={dayjs().format("YYYY-MM-DD")}
+          // min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
           onChange={(e) => setCheckOut(e.target.value)}
         />
       </div>
