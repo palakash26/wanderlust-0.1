@@ -40,6 +40,7 @@ function Filters({ searchParams }: { searchParams: any }) {
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={checkIn}
           min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
+          // max={currentDate} // Restrict to current date
           onChange={(e) => setCheckIn(e.target.value)}
         />
       </div>

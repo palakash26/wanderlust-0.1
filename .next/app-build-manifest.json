@@ -16,30 +16,25 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/sign-in/[[...sign-in]]/page": [
+    "/book-room/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/sign-in/[[...sign-in]]/page.js"
+      "static/chunks/app/book-room/[id]/page.js"
     ],
-    "/admin/users/page": [
+    "/book-room/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/users/page.js"
+      "static/chunks/app/book-room/loading.js"
     ],
-    "/admin/users/loading": [
+    "/user/bookings/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/users/loading.js"
+      "static/chunks/app/user/bookings/page.js"
     ],
-    "/admin/reports/page": [
+    "/user/bookings/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/reports/page.js"
-    ],
-    "/admin/reports/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/reports/loading.js"
+      "static/chunks/app/user/bookings/loading.js"
     ]
   }
 }
