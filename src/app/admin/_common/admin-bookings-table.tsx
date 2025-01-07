@@ -1,20 +1,20 @@
 
 "use client";
 import { BookingType } from "@/interfaces";
-import {  Table } from "antd";
+import { Table } from "antd";
 import dayjs from "dayjs";
 import React from "react";
 
 
 function AdminBookingsTable({ bookings }: { bookings: BookingType[] }) {
- 
+
   const columns = [
-    
+
     {
-        title:"Customer",
-        dataIndex:"user",
-        key:"user",
-        render:(text:string,record:BookingType)=>record.user.name,
+      title: "Customer",
+      dataIndex: "user",
+      key: "user",
+      render: (text: string, record: BookingType) => record.user.name,
     },
     {
       title: "Hotel",
@@ -34,19 +34,33 @@ function AdminBookingsTable({ bookings }: { bookings: BookingType[] }) {
       key: "roomNumber",
       render: (text: string, record: BookingType) => record.room.roomNumber,
     },
+    // {
+    //   title: "Check In Date",
+    //   dataIndex: "checkInDate",
+    //   key: "checkInDate",
+    //   render: (text: string, record: BookingType) =>
+    //     dayjs(record.createdAt).format("MMM DD, YYYY "),
+    // },
+    // {
+    //   title: "Check Out Date",
+    //   dataIndex: "checkOutDate",
+    //   key: "checkOutDate",
+    //   render: (text: string, record: BookingType) =>
+    //     dayjs(record.createdAt).format("MMM DD, YYYY "),
+    // },
+
+
     {
       title: "Check In Date",
       dataIndex: "checkInDate",
       key: "checkInDate",
-      render: (text: string, record: BookingType) =>
-        dayjs(record.createdAt).format("MMM DD, YYYY "),
+      render: (text: string) => dayjs(text).format("MMM DD, YYYY"),
     },
     {
       title: "Check Out Date",
       dataIndex: "checkOutDate",
       key: "checkOutDate",
-      render: (text: string, record: BookingType) =>
-        dayjs(record.createdAt).format("MMM DD, YYYY "),
+      render: (text: string) => dayjs(text).format("MMM DD, YYYY"),
     },
     {
       title: "Total Amount",
@@ -69,12 +83,14 @@ function AdminBookingsTable({ bookings }: { bookings: BookingType[] }) {
   ];
   return (
     <div className="py-5">
-      <Table dataSource={bookings} columns={columns} 
-      pagination={{ pageSize: 10 }}
-      scroll={{ x: 800 }} // Enables horizontal scrolling for smaller screens
+      <Table dataSource={bookings} columns={columns}
+        pagination={{ pageSize: 10 }}
+        scroll={{ x: 800 }} // Enables horizontal scrolling for smaller screens
       />
     </div>
   );
 }
 
 export default AdminBookingsTable;
+
+

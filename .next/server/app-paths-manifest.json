@@ -1,3 +1,7 @@
 {
+  "/subadmin/users/page": "app/subadmin/users/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/admin/bookings/page": "app/admin/bookings/page.js",
+  "/subadmin/bookings/page": "app/subadmin/bookings/page.js",
   "/page": "app/page.js"
 }

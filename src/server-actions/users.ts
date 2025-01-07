@@ -47,15 +47,70 @@ export const GetCurrentUserFromMongoDB = async () => {
   }
 };
 
-export const UpdateUserRole = async (userId: string, isAdmin: boolean) => {
+// export const UpdateUserRole = async (userId: string, isAdmin: boolean) => {
+//   try {
+//     const user = await UserModel.findById(userId);
+//     if (!user) {
+//       return { success: false, message: "User not found" };
+//     }
+//     user.isAdmin = isAdmin;
+//     await user.save();
+//     revalidatePath("/admin/users");
+//     return {
+//       success: true,
+//       message: "User role updated successfully",
+//     };
+//   } catch (error) {
+//     return {
+//       success: false,
+//       error: error,
+//       message: "Error while updating user role",
+//     };
+//   }
+// };
+
+
+// export const UpdateUserRole = async (userId: string, isAdmin: boolean, isSubAdmin: boolean) => {
+//   try {
+//     const user = await UserModel.findById(userId);
+//     if (!user) {
+//       return { success: false, message: "User not found" };
+//     }
+
+//     user.isAdmin = isAdmin;
+//     user.isSubAdmin = isSubAdmin;
+//     await user.save();
+
+//     // Revalidate paths for admin and subadmin views
+//     revalidatePath("/admin/users");
+//     revalidatePath("/subadmin/rooms");
+
+//     return {
+//       success: true,
+//       message: "User role updated successfully",
+//     };
+//   } catch (error) {
+//     return {
+//       success: false,
+//       error,
+//       message: "Error while updating user role",
+//     };
+//   }
+// };
+
+
+export const UpdateUserRole = async (userId: string, role: string) => {
   try {
     const user = await UserModel.findById(userId);
     if (!user) {
       return { success: false, message: "User not found" };
     }
-    user.isAdmin = isAdmin;
+
+    user.isAdmin = role === "admin";
+    user.isSubAdmin = role === "subadmin";
+    user.isActive = role === "user";
+
     await user.save();
-    revalidatePath("/admin/users");
     return {
       success: true,
       message: "User role updated successfully",
@@ -63,7 +118,7 @@ export const UpdateUserRole = async (userId: string, isAdmin: boolean) => {
   } catch (error) {
     return {
       success: false,
-      error: error,
+      error,
       message: "Error while updating user role",
     };
   }

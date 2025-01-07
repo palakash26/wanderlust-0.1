@@ -6,6 +6,7 @@ export interface UserType {
   profilepic: string;
   isActive: boolean;
   isAdmin: boolean;
+  isSubAdmin:boolean;   //// addd...........
   createAt: string;
   updateAt: string;
 }
@@ -37,6 +38,7 @@ export interface RoomType {
 }
 
 export interface BookingType {
+  
   _id: string;
   user: UserType;
   room: RoomType;
@@ -46,7 +48,7 @@ export interface BookingType {
   totalAmount: number;
   totalDays: number;
   paymentId: string;
-  bookingStatus: "Booked" | "Cancelled";
+  bookingStatus: "Booked" | "Cancelled" ;
   createdAt: string; // Optional fields if needed
   updatedAt: string;
 }

@@ -84,8 +84,47 @@ function Sidebar({
     },
   ];
 
+  const subAdminMenuItems: any[] = [
+    {
+      name: "Home",
+      icon: <Home size={iconSize} />,
+      onclick: () => router.push("/"),
+      isActive: pathname === "/",
+    },
+    {
+      name: "Booking",
+      icon: <List size={iconSize} />,
+      onclick: () => router.push("/subadmin/bookings"),
+      isActive: pathname === "/subadmin/bookings",
+    },
+    {
+      name: "Rooms",
+      icon: <BedDouble size={iconSize} />,
+      onclick: () => router.push("/subadmin/rooms"),
+      isActive: pathname.includes("/subadmin/rooms"),
+    },
+    {
+      name: "Users",
+      icon: <User2 size={iconSize} />,
+      onclick: () => router.push("/subadmin/users"),
+      isActive: pathname.includes("/subadmin/users"),
+    },
+    {
+      name: "Profile",
+      icon: <User size={iconSize} />,
+      onclick: () => router.push("/subadmin/profile"),
+      isActive: pathname === "/subadmin/profile",
+    },
+  ];
+
+  // const menuItemsToShow: any[] = loggedInUserData.isAdmin
+  //   ? adminMenuItems
+  //   : userMenuItems;
+
   const menuItemsToShow: any[] = loggedInUserData.isAdmin
     ? adminMenuItems
+    : loggedInUserData.isSubAdmin
+    ? subAdminMenuItems
     : userMenuItems;
 
   return (

@@ -26,6 +26,11 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       require: true,
     },
+    isSubAdmin: { // Add isSubAdmin
+      type: Boolean,
+      require: true,
+      default: false,
+    },
   },
   {
     timestamps: true,
