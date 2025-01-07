@@ -23,17 +23,6 @@ module.exports = require("mongoose");
 
 /***/ }),
 
-/***/ "./action-async-storage.external":
-/*!****************************************************************************!*\
-  !*** external "next/dist/client/components/action-async-storage.external" ***!
-  \****************************************************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("next/dist/client/components/action-async-storage.external");
-
-/***/ }),
-
 /***/ "../../client/components/action-async-storage.external":
 /*!*******************************************************************************!*\
   !*** external "next/dist/client/components/action-async-storage.external.js" ***!
@@ -45,17 +34,6 @@ module.exports = require("next/dist/client/components/action-async-storage.exter
 
 /***/ }),
 
-/***/ "./request-async-storage.external":
-/*!*****************************************************************************!*\
-  !*** external "next/dist/client/components/request-async-storage.external" ***!
-  \*****************************************************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("next/dist/client/components/request-async-storage.external");
-
-/***/ }),
-
 /***/ "../../client/components/request-async-storage.external":
 /*!********************************************************************************!*\
   !*** external "next/dist/client/components/request-async-storage.external.js" ***!
@@ -64,17 +42,6 @@ module.exports = require("next/dist/client/components/request-async-storage.exte
 
 "use strict";
 module.exports = require("next/dist/client/components/request-async-storage.external.js");
-
-/***/ }),
-
-/***/ "./static-generation-async-storage.external":
-/*!***************************************************************************************!*\
-  !*** external "next/dist/client/components/static-generation-async-storage.external" ***!
-  \***************************************************************************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("next/dist/client/components/static-generation-async-storage.external");
 
 /***/ }),
 
@@ -155,28 +122,6 @@ module.exports = require("https");
 
 /***/ }),
 
-/***/ "node:async_hooks":
-/*!***********************************!*\
-  !*** external "node:async_hooks" ***!
-  \***********************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:async_hooks");
-
-/***/ }),
-
-/***/ "node:crypto":
-/*!******************************!*\
-  !*** external "node:crypto" ***!
-  \******************************/
-/***/ ((module) => {
-
-"use strict";
-module.exports = require("node:crypto");
-
-/***/ }),
-
 /***/ "path":
 /*!***********************!*\
   !*** external "path" ***!
@@ -207,6 +152,28 @@ module.exports = require("url");
 
 "use strict";
 module.exports = require("util");
+
+/***/ }),
+
+/***/ "node:async_hooks":
+/*!***********************************!*\
+  !*** external "node:async_hooks" ***!
+  \***********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:async_hooks");
+
+/***/ }),
+
+/***/ "node:crypto":
+/*!******************************!*\
+  !*** external "node:crypto" ***!
+  \******************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("node:crypto");
 
 /***/ }),
 
@@ -423,14 +390,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
 
-const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Akash\OneDrive\Desktop\AKASH_FYCS_54\wanderlust\node_modules\antd\es\index.js@__barrel_optimize__?names=ConfigProvider`)
-
-// Accessing the __esModule property and exporting $$typeof are required here.
-// The __esModule getter forces the proxy target to create the default export
-// and the $$typeof value is for rendering logic to determine if the module
-// is a client boundary.
-const { __esModule, $$typeof } = proxy;
-const __default__ = proxy.default;
 
 const e0 = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Akash\OneDrive\Desktop\AKASH_FYCS_54\wanderlust\node_modules\antd\es\index.js@__barrel_optimize__?names=ConfigProvider#ConfigProvider`);
 
@@ -446,20 +405,9 @@ const e0 = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__W
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   $$typeof: () => (/* binding */ $$typeof),
-/* harmony export */   __esModule: () => (/* binding */ __esModule),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-
-const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Akash\OneDrive\Desktop\AKASH_FYCS_54\wanderlust\src\app\_common\filters.tsx`)
-
-// Accessing the __esModule property and exporting $$typeof are required here.
-// The __esModule getter forces the proxy target to create the default export
-// and the $$typeof value is for rendering logic to determine if the module
-// is a client boundary.
-const { __esModule, $$typeof } = proxy;
-const __default__ = proxy.default;
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Akash\OneDrive\Desktop\AKASH_FYCS_54\wanderlust\src\app\_common\filters.tsx#default`));
 
@@ -585,20 +533,9 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   $$typeof: () => (/* binding */ $$typeof),
-/* harmony export */   __esModule: () => (/* binding */ __esModule),
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! next/dist/build/webpack/loaders/next-flight-loader/module-proxy */ "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-loader/module-proxy.js");
-
-const proxy = (0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Akash\OneDrive\Desktop\AKASH_FYCS_54\wanderlust\src\providers\layout-provider\index.tsx`)
-
-// Accessing the __esModule property and exporting $$typeof are required here.
-// The __esModule getter forces the proxy target to create the default export
-// and the $$typeof value is for rendering logic to determine if the module
-// is a client boundary.
-const { __esModule, $$typeof } = proxy;
-const __default__ = proxy.default;
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,next_dist_build_webpack_loaders_next_flight_loader_module_proxy__WEBPACK_IMPORTED_MODULE_0__.createProxy)(String.raw`C:\Users\Akash\OneDrive\Desktop\AKASH_FYCS_54\wanderlust\src\providers\layout-provider\index.tsx#default`));
 
@@ -645,7 +582,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst dbConnect = async ()=>{\n    if ((mongoose__WEBPACK_IMPORTED_MODULE_0___default().connection).readyState === 1) {\n        console.log(\"Already connected to MongoDB\");\n        return;\n    }\n    try {\n        await mongoose__WEBPACK_IMPORTED_MODULE_0___default().connect(process.env.DATABASE_URL || process.env.MONGO_URI || \"\");\n        console.log(\"Connected to MongoDB successfully\");\n    } catch (error) {\n        console.error(\"MongoDB connection error:\", error);\n        throw new Error(\"Could not connect to MongoDB\");\n    }\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dbConnect);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvdXRpbHMvZGJDb25uZWN0LnRzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFnQztBQUVoQyxNQUFNQyxZQUFZO0lBQ2QsSUFBSUQsNERBQW1CLENBQUNHLFVBQVUsS0FBSyxHQUFHO1FBQ3RDQyxRQUFRQyxHQUFHLENBQUM7UUFDWjtJQUNKO0lBRUEsSUFBSTtRQUNBLE1BQU1MLHVEQUFnQixDQUFDTyxRQUFRQyxHQUFHLENBQUNDLFlBQVksSUFBSUYsUUFBUUMsR0FBRyxDQUFDRSxTQUFTLElBQUk7UUFDNUVOLFFBQVFDLEdBQUcsQ0FBQztJQUNoQixFQUFFLE9BQU9NLE9BQU87UUFDWlAsUUFBUU8sS0FBSyxDQUFDLDZCQUE2QkE7UUFDM0MsTUFBTSxJQUFJQyxNQUFNO0lBQ3BCO0FBQ0o7QUFFQSxpRUFBZVgsU0FBU0EsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3dhbmRlcmx1c3QvLi9zcmMvdXRpbHMvZGJDb25uZWN0LnRzPzU1ZDAiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IG1vbmdvb3NlIGZyb20gJ21vbmdvb3NlJztcclxuXHJcbmNvbnN0IGRiQ29ubmVjdCA9IGFzeW5jICgpID0+IHtcclxuICAgIGlmIChtb25nb29zZS5jb25uZWN0aW9uLnJlYWR5U3RhdGUgPT09IDEpIHtcclxuICAgICAgICBjb25zb2xlLmxvZyhcIkFscmVhZHkgY29ubmVjdGVkIHRvIE1vbmdvREJcIik7XHJcbiAgICAgICAgcmV0dXJuO1xyXG4gICAgfVxyXG5cclxuICAgIHRyeSB7XHJcbiAgICAgICAgYXdhaXQgbW9uZ29vc2UuY29ubmVjdChwcm9jZXNzLmVudi5EQVRBQkFTRV9VUkwgfHwgcHJvY2Vzcy5lbnYuTU9OR09fVVJJIHx8ICcnKTtcclxuICAgICAgICBjb25zb2xlLmxvZyhcIkNvbm5lY3RlZCB0byBNb25nb0RCIHN1Y2Nlc3NmdWxseVwiKTtcclxuICAgIH0gY2F0Y2ggKGVycm9yKSB7XHJcbiAgICAgICAgY29uc29sZS5lcnJvcihcIk1vbmdvREIgY29ubmVjdGlvbiBlcnJvcjpcIiwgZXJyb3IpO1xyXG4gICAgICAgIHRocm93IG5ldyBFcnJvcihcIkNvdWxkIG5vdCBjb25uZWN0IHRvIE1vbmdvREJcIik7XHJcbiAgICB9XHJcbn07XHJcblxyXG5leHBvcnQgZGVmYXVsdCBkYkNvbm5lY3Q7XHJcblxyXG4iXSwibmFtZXMiOlsibW9uZ29vc2UiLCJkYkNvbm5lY3QiLCJjb25uZWN0aW9uIiwicmVhZHlTdGF0ZSIsImNvbnNvbGUiLCJsb2ciLCJjb25uZWN0IiwicHJvY2VzcyIsImVudiIsIkRBVEFCQVNFX1VSTCIsIk1PTkdPX1VSSSIsImVycm9yIiwiRXJyb3IiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(rsc)/./src/utils/dbConnect.ts\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nconst dbConnect = async ()=>{\n    if ((mongoose__WEBPACK_IMPORTED_MODULE_0___default().connection).readyState === 1) {\n        console.log(\"Already connected to MongoDB\");\n        return;\n    }\n    try {\n        await mongoose__WEBPACK_IMPORTED_MODULE_0___default().connect(process.env.DATABASE_URL || process.env.MONGO_URI || \"\");\n        console.log(\"Connected to MongoDB successfully\");\n    } catch (error) {\n        console.error(\"MongoDB connection error:\", error);\n        throw new Error(\"Could not connect to MongoDB\");\n    }\n};\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dbConnect);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHJzYykvLi9zcmMvdXRpbHMvZGJDb25uZWN0LnRzIiwibWFwcGluZ3MiOiI7Ozs7OztBQUFnQztBQUVoQyxNQUFNQyxZQUFZO0lBQ2QsSUFBSUQsNERBQW1CLENBQUNHLFVBQVUsS0FBSyxHQUFHO1FBQ3RDQyxRQUFRQyxHQUFHLENBQUM7UUFDWjtJQUNKO0lBR0EsSUFBSTtRQUNBLE1BQU1MLHVEQUFnQixDQUFDTyxRQUFRQyxHQUFHLENBQUNDLFlBQVksSUFBSUYsUUFBUUMsR0FBRyxDQUFDRSxTQUFTLElBQUk7UUFDNUVOLFFBQVFDLEdBQUcsQ0FBQztJQUNoQixFQUFFLE9BQU9NLE9BQU87UUFDWlAsUUFBUU8sS0FBSyxDQUFDLDZCQUE2QkE7UUFDM0MsTUFBTSxJQUFJQyxNQUFNO0lBQ3BCO0FBQ0o7QUFFQSxpRUFBZVgsU0FBU0EsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovL3dhbmRlcmx1c3QvLi9zcmMvdXRpbHMvZGJDb25uZWN0LnRzPzU1ZDAiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IG1vbmdvb3NlIGZyb20gJ21vbmdvb3NlJztcclxuXHJcbmNvbnN0IGRiQ29ubmVjdCA9IGFzeW5jICgpID0+IHtcclxuICAgIGlmIChtb25nb29zZS5jb25uZWN0aW9uLnJlYWR5U3RhdGUgPT09IDEpIHtcclxuICAgICAgICBjb25zb2xlLmxvZyhcIkFscmVhZHkgY29ubmVjdGVkIHRvIE1vbmdvREJcIik7XHJcbiAgICAgICAgcmV0dXJuO1xyXG4gICAgfVxyXG5cclxuICAgIFxyXG4gICAgdHJ5IHtcclxuICAgICAgICBhd2FpdCBtb25nb29zZS5jb25uZWN0KHByb2Nlc3MuZW52LkRBVEFCQVNFX1VSTCB8fCBwcm9jZXNzLmVudi5NT05HT19VUkkgfHwgJycpO1xyXG4gICAgICAgIGNvbnNvbGUubG9nKFwiQ29ubmVjdGVkIHRvIE1vbmdvREIgc3VjY2Vzc2Z1bGx5XCIpO1xyXG4gICAgfSBjYXRjaCAoZXJyb3IpIHtcclxuICAgICAgICBjb25zb2xlLmVycm9yKFwiTW9uZ29EQiBjb25uZWN0aW9uIGVycm9yOlwiLCBlcnJvcik7XHJcbiAgICAgICAgdGhyb3cgbmV3IEVycm9yKFwiQ291bGQgbm90IGNvbm5lY3QgdG8gTW9uZ29EQlwiKTtcclxuICAgIH1cclxufTtcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGRiQ29ubmVjdDtcclxuXHJcbiJdLCJuYW1lcyI6WyJtb25nb29zZSIsImRiQ29ubmVjdCIsImNvbm5lY3Rpb24iLCJyZWFkeVN0YXRlIiwiY29uc29sZSIsImxvZyIsImNvbm5lY3QiLCJwcm9jZXNzIiwiZW52IiwiREFUQUJBU0VfVVJMIiwiTU9OR09fVVJJIiwiZXJyb3IiLCJFcnJvciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(rsc)/./src/utils/dbConnect.ts\n");
 
 /***/ }),
 
@@ -667,7 +604,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/antd","vendor-chunks/@clerk","vendor-chunks/framer-motion","vendor-chunks/@ant-design","vendor-chunks/crypto-js","vendor-chunks/@rc-component","vendor-chunks/rc-field-form","vendor-chunks/swr","vendor-chunks/rc-util","vendor-chunks/@ctrl","vendor-chunks/tslib","vendor-chunks/rc-motion","vendor-chunks/rc-notification","vendor-chunks/rc-pagination","vendor-chunks/@babel","vendor-chunks/rc-drawer","vendor-chunks/stylis","vendor-chunks/lucide-react","vendor-chunks/cookie","vendor-chunks/motion-dom","vendor-chunks/use-sync-external-store","vendor-chunks/react-is","vendor-chunks/dayjs","vendor-chunks/map-obj","vendor-chunks/no-case","vendor-chunks/@emotion","vendor-chunks/lower-case","vendor-chunks/@swc","vendor-chunks/classnames","vendor-chunks/snakecase-keys","vendor-chunks/rc-picker","vendor-chunks/motion-utils","vendor-chunks/snake-case","vendor-chunks/dot-case","vendor-chunks/stripe","vendor-chunks/qs","vendor-chunks/object-inspect","vendor-chunks/get-intrinsic","vendor-chunks/side-channel","vendor-chunks/define-data-property","vendor-chunks/has-symbols","vendor-chunks/function-bind","vendor-chunks/call-bind","vendor-chunks/set-function-length","vendor-chunks/has-property-descriptors","vendor-chunks/es-errors","vendor-chunks/es-define-property","vendor-chunks/has-proto","vendor-chunks/gopd","vendor-chunks/hasown"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=C%3A%5CUsers%5CAkash%5COneDrive%5CDesktop%5CAKASH_FYCS_54%5Cwanderlust%5Csrc%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5CAkash%5COneDrive%5CDesktop%5CAKASH_FYCS_54%5Cwanderlust&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
+var __webpack_exports__ = __webpack_require__.X(0, ["vendor-chunks/next","vendor-chunks/antd","vendor-chunks/@clerk","vendor-chunks/framer-motion","vendor-chunks/@ant-design","vendor-chunks/crypto-js","vendor-chunks/@rc-component","vendor-chunks/rc-field-form","vendor-chunks/swr","vendor-chunks/rc-util","vendor-chunks/@ctrl","vendor-chunks/tslib","vendor-chunks/rc-motion","vendor-chunks/rc-notification","vendor-chunks/rc-pagination","vendor-chunks/@babel","vendor-chunks/rc-drawer","vendor-chunks/stylis","vendor-chunks/lucide-react","vendor-chunks/cookie","vendor-chunks/motion-dom","vendor-chunks/use-sync-external-store","vendor-chunks/react-is","vendor-chunks/dayjs","vendor-chunks/map-obj","vendor-chunks/no-case","vendor-chunks/@emotion","vendor-chunks/lower-case","vendor-chunks/@swc","vendor-chunks/classnames","vendor-chunks/snakecase-keys","vendor-chunks/rc-picker","vendor-chunks/motion-utils","vendor-chunks/snake-case","vendor-chunks/dot-case","vendor-chunks/stripe","vendor-chunks/es-errors","vendor-chunks/qs","vendor-chunks/object-inspect","vendor-chunks/has-symbols","vendor-chunks/function-bind","vendor-chunks/call-bind","vendor-chunks/side-channel","vendor-chunks/set-function-length","vendor-chunks/hasown","vendor-chunks/has-proto","vendor-chunks/has-property-descriptors","vendor-chunks/gopd","vendor-chunks/get-intrinsic","vendor-chunks/es-define-property","vendor-chunks/define-data-property"], () => (__webpack_exec__("(rsc)/./node_modules/next/dist/build/webpack/loaders/next-app-loader.js?name=app%2Fpage&page=%2Fpage&appPaths=%2Fpage&pagePath=private-next-app-dir%2Fpage.tsx&appDir=C%3A%5CUsers%5CAkash%5COneDrive%5CDesktop%5CAKASH_FYCS_54%5Cwanderlust%5Csrc%5Capp&pageExtensions=tsx&pageExtensions=ts&pageExtensions=jsx&pageExtensions=js&rootDir=C%3A%5CUsers%5CAkash%5COneDrive%5CDesktop%5CAKASH_FYCS_54%5Cwanderlust&isDev=true&tsconfigPath=tsconfig.json&basePath=&assetPrefix=&nextConfigOutput=&preferredRegion=&middlewareConfig=e30%3D!")));
 module.exports = __webpack_exports__;
 
 })();

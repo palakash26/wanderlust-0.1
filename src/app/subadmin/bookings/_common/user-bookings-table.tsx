@@ -53,13 +53,13 @@ function UserBookingsTable({ bookings }: { bookings: BookingType[] }) {
       title: "Check In Date",
       dataIndex: "checkInDate",
       key: "checkInDate",
-      render: (text: string) => dayjs(text).format("MMM DD, YYYY"),
+      render: (text: string,record: BookingType) => dayjs(record.checkInDate).format("MMM DD, YYYY"),
     },
     {
       title: "Check Out Date",
       dataIndex: "checkOutDate",
       key: "checkOutDate",
-      render: (text: string) => dayjs(text).format("MMM DD, YYYY"),
+      render: (text: string,record: BookingType) => dayjs(record.checkOutDate).format("MMM DD, YYYY"),
     },
     {
       title: "Total Amount",

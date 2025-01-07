@@ -5,7 +5,7 @@ import ReportsData from "./_common/reports-data";
 import Spinner from "@/components/spinner";
 
 function ReportsPage({ searchParams }: { searchParams: any }) {
-  console.log(searchParams);
+  console.log("searchparams" ,searchParams);
   
   const suspenseKey = JSON.stringify(searchParams);
   return (

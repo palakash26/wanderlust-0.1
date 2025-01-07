@@ -10,9 +10,6 @@ function ReportsFilters({searchParams}:{searchParams:any}) {
   const [endDate,setEndDate] = React.useState(searchParams.endDate || "");
 const router = useRouter();
 
-// Get today's date in YYYY-MM-DD format
-const currentDate = new Date().toISOString().split("T")[0];
-
   const onGetData = ()=>{
     const newSearchParamsObject = { ...searchParams, startDate, endDate };
     const newSearchParams = new URLSearchParams(
@@ -36,8 +33,7 @@ const currentDate = new Date().toISOString().split("T")[0];
           placeholder="Check-in"
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={startDate}
-          min={dayjs().format("YYYY-MM-DD")}
-          // min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
+          // min={dayjs().format("YYYY-MM-DD")}
           onChange={(e) => setStartDate(e.target.value)}
         />
       </div>
@@ -51,7 +47,6 @@ const currentDate = new Date().toISOString().split("T")[0];
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={endDate}
           min={dayjs().format("YYYY-MM-DD")}
-          // min={currentDate}   //min={currentDate} {/* Restrict to current date or later */}
           onChange={(e) => setEndDate(e.target.value)}
         />
       </div>
