@@ -9,6 +9,11 @@ import { Edit,PlusSquare, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
+type RoomsTableProps = {
+  rooms: RoomType[];
+  userRole: string;
+};
+
 function RoomsTable({ rooms,userRole }: { rooms: RoomType[]; userRole: string; }) {
   const router = useRouter();
   const [loading = false, setLoading] = React.useState<boolean>(false);
