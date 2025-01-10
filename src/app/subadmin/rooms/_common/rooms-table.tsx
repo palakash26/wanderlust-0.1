@@ -14,7 +14,8 @@ type RoomsTableProps = {
   userRole: string;
 };
 
-function RoomsTable({ rooms,userRole }: { rooms: RoomType[]; userRole: string; }) {
+// function RoomsTable({ rooms,userRole }: { rooms: RoomType[]; userRole: string; }) {
+  function RoomsTable({ rooms,userRole }: RoomsTableProps) {
   const router = useRouter();
   const [loading = false, setLoading] = React.useState<boolean>(false);
 
