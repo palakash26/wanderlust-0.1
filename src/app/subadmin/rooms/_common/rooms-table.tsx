@@ -9,13 +9,13 @@ import { Edit,PlusSquare, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-type RoomsTableProps = {
-  rooms: RoomType[];
-  userRole: string;
-};
+// type RoomsTableProps = {
+//   rooms: RoomType[];
+//   userRole: string;
+// };
 
-// function RoomsTable({ rooms,userRole }: { rooms: RoomType[]; userRole: string; }) {
-  function RoomsTable({ rooms,userRole }: RoomsTableProps) {
+function RoomsTable({ rooms,isAdmin}: { rooms: RoomType[];isAdmin: boolean;  }) {
+  // function RoomsTable({ rooms,userRole }: RoomsTableProps) {
   const router = useRouter();
   const [loading = false, setLoading] = React.useState<boolean>(false);
 
@@ -39,7 +39,7 @@ type RoomsTableProps = {
 
 
   const onDelete = async (roomId: string) => {
-    if (userRole !== "admin") {
+    if (!isAdmin) {
       message.warning("Only admins can delete rooms. Please contact the admin for assistance.");
       return;
     } 
@@ -100,7 +100,7 @@ type RoomsTableProps = {
           
             <Trash2
               size={18}
-              className={`cursor-pointer text-red-700 ${userRole === "subadmin" ? 'cursor-not-allowed' : ''}`}
+              className={`cursor-pointer text-red-700 ${!isAdmin  ? 'cursor-not-allowed' : ''}`}
               onClick={() => onDelete(record._id)}
             />
           
