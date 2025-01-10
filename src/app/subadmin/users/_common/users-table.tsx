@@ -82,6 +82,8 @@
 // }
 
 // export default UsersTable;
+
+
 "use client";
 import { UserType } from "@/interfaces";
 import { UpdateUserRole } from "@/server-actions/users";
@@ -168,3 +170,5 @@ function UsersTable({ users }: { users: UserType[] }) {
 }
 
 export default UsersTable;
+
+

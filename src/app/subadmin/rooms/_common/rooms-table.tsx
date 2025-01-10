@@ -3,33 +3,42 @@
 import { RoomType } from "@/interfaces";
 import { DeleteRoom } from "@/server-actions/rooms";
 
-import { message, Table } from "antd";
+import { message, Modal, Table } from "antd";
 import dayjs from "dayjs";
 import { Edit,PlusSquare, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-function RoomsTable({ rooms }: { rooms: RoomType[] }) {
+function RoomsTable({ rooms,userRole }: { rooms: RoomType[]; userRole: string; }) {
   const router = useRouter();
   const [loading = false, setLoading] = React.useState<boolean>(false);
 
+  // const onDelete = async (roomId: string) => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await DeleteRoom(roomId);
+  //     if (response.success) {
+  //       message.success(response.message);
+  //       router.refresh(); // Reload data after deletion
+  //     }
+  //     if (!response.success) {
+  //       message.error(response.error);
+  //     }
+  //   } catch (error: any) {
+  //     message.error(error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const onDelete = async (roomId: string) => {
-    try {
-      setLoading(true);
-      const response = await DeleteRoom(roomId);
-      if (response.success) {
-        message.success(response.message);
-        router.refresh(); // Reload data after deletion
-      }
-      if (!response.success) {
-        message.error(response.error);
-      }
-    } catch (error: any) {
-      message.error(error.message);
-    } finally {
-      setLoading(false);
-    }
+    if (userRole !== "admin") {
+      message.warning("Only admins can delete rooms. Please contact the admin for assistance.");
+      return;
+    } 
   };
+  
 
   const columns = [
     {
@@ -77,20 +86,22 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
       key: "action",
       render: (text: any, record: RoomType) => (
         <div className="flex gap-5 items-center">
-          
           <Edit
             size={18}
             className="cursor-pointer text-yellow-700"
-            onClick={() => router.push(`/admin/rooms/edit/${record._id}`)}
+            onClick={() => router.push(`/subadmin/rooms/edit/${record._id}`)}
           />
-          <Trash2
-            size={18}
-            className="cursor-pointer text-red-700"
-            onClick={() => onDelete(record._id)}
-          />
+          
+            <Trash2
+              size={18}
+              className={`cursor-pointer text-red-700 ${userRole === "subadmin" ? 'cursor-not-allowed' : ''}`}
+              onClick={() => onDelete(record._id)}
+            />
+          
         </div>
       ),
     },
+    
   ];
 
   return (

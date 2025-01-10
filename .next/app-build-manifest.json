@@ -16,35 +16,30 @@
       "static/chunks/main-app.js",
       "static/chunks/app/loading.js"
     ],
-    "/admin/bookings/page": [
+    "/subadmin/rooms/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/bookings/page.js"
+      "static/chunks/app/subadmin/rooms/page.js"
     ],
-    "/admin/bookings/loading": [
+    "/subadmin/rooms/edit/[id]/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/bookings/loading.js"
+      "static/chunks/app/subadmin/rooms/edit/[id]/page.js"
     ],
-    "/admin/reports/page": [
+    "/subadmin/bookings/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/reports/page.js"
+      "static/chunks/app/subadmin/bookings/page.js"
     ],
-    "/admin/reports/loading": [
+    "/subadmin/bookings/loading": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/reports/loading.js"
+      "static/chunks/app/subadmin/bookings/loading.js"
     ],
-    "/admin/users/page": [
+    "/subadmin/rooms/add/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/admin/users/page.js"
-    ],
-    "/admin/users/loading": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/admin/users/loading.js"
+      "static/chunks/app/subadmin/rooms/add/page.js"
     ]
   }
 }

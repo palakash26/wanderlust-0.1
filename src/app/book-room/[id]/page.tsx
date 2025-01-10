@@ -11,6 +11,7 @@ async function BookRoomPage({
     id: string;
   };
 }) {
+  // const response = await RoomModel.findById(params.id).populate("hotel");
   const response = await RoomModel.findById(params.id).populate("hotel");
   const room: RoomType = JSON.parse(JSON.stringify(response));
   return (

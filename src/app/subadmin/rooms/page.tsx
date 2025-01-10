@@ -11,7 +11,7 @@ import RoomsTable from "./_common/rooms-table";
     <div>
     <div className="flex justify-between items-center">
       <PageTitle title="Rooms" />
-      <LinkButton path="/admin/rooms/add" title="Add Room" />
+      <LinkButton path="/subadmin/rooms/add" title="Add Room" />
     </div>
     <RoomsTable rooms={rooms}/>
     </div>

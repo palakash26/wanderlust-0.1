@@ -9,6 +9,8 @@ export interface UserType {
   isSubAdmin:boolean;   //// addd...........
   createAt: string;
   updateAt: string;
+  role: string;         // Added this property for user role (admin, subadmin, etc.)
+  createdBy: string;
 }
 
 export interface HotelType {

@@ -11,7 +11,7 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
 
   const hotels = await HotelModel.find();
   console.log(hotels);
-  
+
   console.log("Search Params:", searchParams);
 
   const response = await GetAvailabeRooms({
@@ -20,13 +20,10 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
     type: searchParams.type || "",
   });
 
-  
-  const rooms: RoomType[] = response.data;
-  // const response = await RoomModel.find()
-  //   .populate("hotel")
-  //   .sort({ createdAt: -1 });
-  // const rooms = await JSON.parse(JSON.stringify(response));
+  console.log("Rooms Response:", response.data);
 
+  const rooms: RoomType[] = response.data;
+  
   if (rooms.length === 0) {
     return <div>No rooms found</div>;
   }
@@ -34,19 +31,23 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 ">
       {rooms.map((room: RoomType) => (
         <Link
-          href={`book-room/${room._id}`}
+        href={`book-room/${room._id}`}
           key={room._id}
           className="no-underline text-black">
           <div className=" flex flex-col gap-2 border border-gray-200 border-solid rounded-t-lg room-card">
             <img
               src={room.media[0]}
-              className="w-full h-64 object-cover rounded-t-lg"/>
+              className="w-full h-64 object-cover rounded-t-lg" />
             <div className="px-3 py-2 flex flex-col text-sm  gap-2">
-              <span>{room.name}</span>
+              <span> {room.name}</span>
               <span className="text-teal-500 text-xs">
                 {room.hotel
-                  ? `${room.hotel.name} - ${room.hotel.address}`
+                  // ? `${room.hotel.name} - ${room.hotel.address}`
+                  ? `${room.hotel.name || "Hotel name missing"} - ${room.hotel.address || "Address missing"
+                  }`
                   : "Hotel information not available"}
+
+                {/* {room.hotel.name} - {room.hotel.address} */}
               </span>
               <hr className="border-gray-200 border border-solid" />
               <div className="flex justify-between ">
@@ -60,3 +61,30 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
   );
 }
 export default RoomsData;
+
+
+                  // const response = await RoomModel.find()
+                  //   .populate("hotel")
+                  //   .sort({ createdAt: -1 });
+                  // const rooms = await JSON.parse(JSON.stringify(response));
+                
+                  // Fetch rooms using GetAvailabeRooms
+                  // const apiResponse = await GetAvailabeRooms({
+                  //   reqCheckInDate: searchParams.checkIn || "",
+                  //   reqCheckOutDate: searchParams.checkOut || "",
+                  //   type: searchParams.type || "",
+                  // });
+                
+                  // console.log("Rooms Response from API:", apiResponse.data);
+                
+                  // const roomsFromAPI: RoomType[] = apiResponse.data;
+                
+                  // // Fetch rooms using RoomModel with .populate("hotel")
+                  // const dbResponse = await RoomModel.find()
+                  //   .populate("hotel")
+                  //   .sort({ createdAt: -1 });
+                
+                  // const roomsFromDB: RoomType[] = JSON.parse(JSON.stringify(dbResponse));
+                
+                  // // Combine or choose the preferred data source
+                  // const rooms = roomsFromAPI.length > 0 ? roomsFromAPI : roomsFromDB;

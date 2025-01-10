@@ -119,19 +119,19 @@ function AdminBookingsTable({ bookings }: { bookings: BookingType[] }) {
       title: "Hotel",
       dataIndex: "hotel",
       key: "hotel",
-      render: (text: string, record: BookingType) => record.hotel.name,
+      render: (text: string, record: BookingType) => record.hotel?.name || "N/A",
     },
     {
       title: "Room",
       dataIndex: "room",
       key: "room",
-      render: (text: string, record: BookingType) => record.room.name,
+      render: (text: string, record: BookingType) => record.room?.name || "N/A" ,
     },
     {
       title: "Room Number",
       dataIndex: "roomNumber",
       key: "roomNumber",
-      render: (text: string, record: BookingType) => record.room.roomNumber,
+      render: (text: string, record: BookingType) => record.room?.roomNumber || "N/A",
     },
     {
       title: "Check-In Date",

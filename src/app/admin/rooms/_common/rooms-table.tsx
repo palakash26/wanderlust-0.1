@@ -3,7 +3,7 @@
 import { RoomType } from "@/interfaces";
 import { DeleteRoom } from "@/server-actions/rooms";
 
-import { message, Table } from "antd";
+import { Modal,message, Table } from "antd";
 import dayjs from "dayjs";
 import { Edit,PlusSquare, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -13,24 +13,50 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
   const router = useRouter();
   const [loading = false, setLoading] = React.useState<boolean>(false);
 
-  const onDelete = async (roomId: string) => {
-    try {
-      setLoading(true);
-      const response = await DeleteRoom(roomId);
-      if (response.success) {
-        message.success(response.message);
-        router.refresh(); // Reload data after deletion
-      }
-      if (!response.success) {
-        message.error(response.error);
-      }
-    } catch (error: any) {
-      message.error(error.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const onDelete = async (roomId: string) => {
+  //   try {
+  //     setLoading(true);
+  //     const response = await DeleteRoom(roomId);
+  //     if (response.success) {
+  //       message.success(response.message);
+  //       router.refresh(); // Reload data after deletion
+  //     }
+  //     if (!response.success) {
+  //       message.error(response.error);
+  //     }
+  //   } catch (error: any) {
+  //     message.error(error.message);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
+  const onDelete = async (roomId: string) => {
+    // Show confirmation modal before deletion
+    Modal.confirm({
+      title: 'Are you sure?',
+      content: 'First delete the hotels then delete room.',
+      onOk: async () => {
+        try {
+          setLoading(true);
+          // const response = await DeleteRoom(roomId);
+          // if (response.success) {
+            // message.success(response.message);
+            router.push('/admin/hotels'); // Redirect to /admin/hotels after successful deletion
+          // } else {
+            // message.error(response.error);
+          // }
+        } catch (error: any) {
+          message.error(error.message || 'An error occurred while deleting the room.');
+        } finally {
+          setLoading(false);
+        }
+      },
+      onCancel() {
+        console.log('Deletion canceled');
+      },
+    });
+  };
   const columns = [
     {
       title: "Name",
@@ -86,6 +112,7 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
           <Trash2
             size={18}
             className="cursor-pointer text-red-700"
+            // onClick={()=>router.push(`/admin/hotel`)}
             onClick={() => onDelete(record._id)}
           />
         </div>

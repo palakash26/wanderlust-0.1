@@ -40,7 +40,7 @@ function RoomsForm({
 
       if (response?.success) {
         message.success(response.message);
-        router.push("/admin/rooms");
+        router.push("/subadmin/rooms");
       }
       if (!response?.success) {
         message.error(response?.error);
@@ -188,7 +188,7 @@ function RoomsForm({
       </div>
 
       <div className="col-span-3 flex justify-end gap-5">
-        <Button disabled={loading} onClick={() => router.push("/admin/rooms")}>
+        <Button disabled={loading} onClick={() => router.push("/subadmin/rooms")}>
           Cancel
         </Button>
         <Button type="primary" htmlType="submit" loading={loading}>
