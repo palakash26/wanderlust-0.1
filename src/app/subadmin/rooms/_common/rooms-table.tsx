@@ -1,6 +1,6 @@
 "use client";
 
-import { RoomType } from "@/interfaces";
+import { RoomType, UserType } from "@/interfaces";
 import { DeleteRoom } from "@/server-actions/rooms";
 
 import { message, Modal, Table } from "antd";
@@ -9,40 +9,19 @@ import { Edit,PlusSquare, Trash2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-// type RoomsTableProps = {
-//   rooms: RoomType[];
-//   userRole: string;
-// };
 
-function RoomsTable({ rooms,isAdmin}: { rooms: RoomType[];isAdmin: boolean;  }) {
+function RoomsTable({ rooms}: { rooms: RoomType[];  }) {
   // function RoomsTable({ rooms,userRole }: RoomsTableProps) {
   const router = useRouter();
   const [loading = false, setLoading] = React.useState<boolean>(false);
 
-  // const onDelete = async (roomId: string) => {
-  //   try {
-  //     setLoading(true);
-  //     const response = await DeleteRoom(roomId);
-  //     if (response.success) {
-  //       message.success(response.message);
-  //       router.refresh(); // Reload data after deletion
-  //     }
-  //     if (!response.success) {
-  //       message.error(response.error);
-  //     }
-  //   } catch (error: any) {
-  //     message.error(error.message);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-
-  const onDelete = async (roomId: string) => {
-    if (!isAdmin) {
+  
+  
+  const onDelete = async () => {
+    // if (!isAdmin) {
       message.warning("Only admins can delete rooms. Please contact the admin for assistance.");
-      return;
-    } 
+      // return;
+    // } 
   };
   
 
@@ -100,16 +79,16 @@ function RoomsTable({ rooms,isAdmin}: { rooms: RoomType[];isAdmin: boolean;  }) 
           
             <Trash2
               size={18}
-              className={`cursor-pointer text-red-700 ${!isAdmin  ? 'cursor-not-allowed' : ''}`}
-              onClick={() => onDelete(record._id)}
-            />
+              className={`cursor-pointer text-red-700 `}  //${!isAdmin  ? 'cursor-not-allowed' : ''}
+              onClick={() => onDelete()}
+              />
           
         </div>
       ),
     },
     
   ];
-
+  
   return (
     <div className="">
       <Table
@@ -124,3 +103,25 @@ function RoomsTable({ rooms,isAdmin}: { rooms: RoomType[];isAdmin: boolean;  }) 
 }
 
 export default RoomsTable;
+
+      // const onDelete = async (roomId: string) => {
+      //   try {
+      //     setLoading(true);
+      //     const response = await DeleteRoom(roomId);
+      //     if (response.success) {
+      //       message.success(response.message);
+      //       router.refresh(); // Reload data after deletion
+      //     }
+      //     if (!response.success) {
+      //       message.error(response.error);
+      //     }
+      //   } catch (error: any) {
+      //     message.error(error.message);
+      //   } finally {
+      //     setLoading(false);
+      //   }
+      // };
+  // type RoomsTableProps = {
+  //   rooms: RoomType[];
+  //   userRole: string;
+  // };
