@@ -35,14 +35,15 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
     // Show confirmation modal before deletion
     Modal.confirm({
       title: 'Are you sure?',
-      content: 'First delete the hotels then delete room.',
+      // content: 'First delete the hotels then delete room.',
+      content: 'delete the  delete room.',
       onOk: async () => {
         try {
           setLoading(true);
           // const response = await DeleteRoom(roomId);
           // if (response.success) {
             // message.success(response.message);
-            router.push('/admin/hotels'); // Redirect to /admin/hotels after successful deletion
+            router.push('/admin/rooms'); // Redirect to /admin/hotels after successful deletion
           // } else {
             // message.error(response.error);
           // }

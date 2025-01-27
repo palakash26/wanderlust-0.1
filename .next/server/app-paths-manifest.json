@@ -1,8 +1,5 @@
 {
-  "/page": "app/page.js",
-  "/subadmin/rooms/page": "app/subadmin/rooms/page.js",
-  "/subadmin/rooms/edit/[id]/page": "app/subadmin/rooms/edit/[id]/page.js",
-  "/subadmin/rooms/add/page": "app/subadmin/rooms/add/page.js",
-  "/subadmin/users/page": "app/subadmin/users/page.js",
-  "/subadmin/bookings/page": "app/subadmin/bookings/page.js"
+  "/sign-in/[[...sign-in]]/page": "app/sign-in/[[...sign-in]]/page.js",
+  "/admin/reports/page": "app/admin/reports/page.js",
+  "/page": "app/page.js"
 }

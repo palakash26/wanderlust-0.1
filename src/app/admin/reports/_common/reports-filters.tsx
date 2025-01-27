@@ -33,7 +33,7 @@ const router = useRouter();
           placeholder="Check-in"
           className="h-10 px-6 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
           value={startDate}
-          // min={dayjs().format("YYYY-MM-DD")}
+          min={dayjs().format("YYYY-MM-DD")}
           onChange={(e) => setStartDate(e.target.value)}
         />
       </div>
