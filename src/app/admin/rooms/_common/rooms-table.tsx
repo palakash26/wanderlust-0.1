@@ -40,13 +40,13 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
       onOk: async () => {
         try {
           setLoading(true);
-          // const response = await DeleteRoom(roomId);
-          // if (response.success) {
-            // message.success(response.message);
-            router.push('/admin/rooms'); // Redirect to /admin/hotels after successful deletion
-          // } else {
-            // message.error(response.error);
-          // }
+          const response = await DeleteRoom(roomId);
+          if (response.success) {
+            message.success(response.message);
+            // router.push('/admin/rooms'); // Redirect to /admin/hotels after successful deletion
+          } else {
+            message.error(response.error);
+          }
         } catch (error: any) {
           message.error(error.message || 'An error occurred while deleting the room.');
         } finally {
