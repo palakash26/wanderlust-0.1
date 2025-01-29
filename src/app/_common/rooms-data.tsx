@@ -47,14 +47,14 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
                 <button
                   className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
-                  {/* &#9664; */}
+                  
                 </button>
               }
               nextArrow={
                 <button
                   className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity"
                 >
-                  {/* &#9654; */}
+                  
                 </button>
               }
             >
