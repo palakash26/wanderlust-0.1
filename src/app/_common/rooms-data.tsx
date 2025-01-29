@@ -5,6 +5,8 @@ import HotelModel from "@/models/hotel-model";
 import Link from "next/link";
 import React from "react";
 import { GetAvailabeRooms } from "@/server-actions/bookings";
+import { Carousel } from "antd";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 async function RoomsData({ searchParams }: { searchParams: any }) {
   await dbConnect();
@@ -28,16 +30,43 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
     return <div>No rooms found</div>;
   }
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7  ">
       {rooms.map((room: RoomType) => (
         <Link
         href={`book-room/${room._id}`}
           key={room._id}
           className="no-underline text-black">
           <div className=" flex flex-col gap-2 border border-gray-200 border-solid rounded-t-lg room-card">
-            <img
+            {/* <img
               src={room.media[0]}
-              className="w-full h-64 object-cover rounded-t-lg" />
+              className="w-full h-64 object-cover rounded-t-lg" /> */}
+                <Carousel 
+              arrows
+              
+              prevArrow={
+                <button
+                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  {/* &#9664; */}
+                </button>
+              }
+              nextArrow={
+                <button
+                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity"
+                >
+                  {/* &#9654; */}
+                </button>
+              }
+            >
+              {room.media.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`Room ${index}`}
+                  className="w-full h-64 object-cover rounded-t-lg"
+                />
+              ))}
+            </Carousel>
             <div className="px-3 py-2 flex flex-col text-sm  gap-2">
               <span> {room.name}</span>
               <span className="text-teal-500 text-xs">

@@ -36,7 +36,7 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
     Modal.confirm({
       title: 'Are you sure?',
       // content: 'First delete the hotels then delete room.',
-      content: 'delete the  delete room.',
+      content: 'Admin permission to delete this room.',
       onOk: async () => {
         try {
           setLoading(true);
@@ -70,26 +70,22 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
       dataIndex: "hotel",
       key: "hotel",
       render: (text: any, record: RoomType) =>
-        record.hotel ? record.hotel.name : "N/A",
-      
+        record.hotel ? record.hotel.name : "N/A",  
     },
     {
       title: "Room Number",
       dataIndex: "roomNumber",
       key: "roomNumber",
-      
     },
     {
       title: "Type",
       dataIndex: "type",
-      key: "type",
-      
+      key: "type", 
     },
     {
       title: "Rent Per Day",
       dataIndex: "rentPerDay",
       key: "rentPerDay",
-      
     },
     {
       title: "Created At",
@@ -97,14 +93,12 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
       key: "createdAt",
       render: (text: any, record: RoomType) =>
         dayjs(record.createdAt).format("MM-DD-YYYY | hh:mm A"),
-      
     },
     {
       title: "Action",
       key: "action",
       render: (text: any, record: RoomType) => (
-        <div className="flex gap-5 items-center">
-          
+        <div className="flex gap-5 items-center"> 
           <Edit
             size={18}
             className="cursor-pointer text-yellow-700"
@@ -120,7 +114,6 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
       ),
     },
   ];
-
   return (
     <div className="">
       <Table
@@ -128,10 +121,9 @@ function RoomsTable({ rooms }: { rooms: RoomType[] }) {
         dataSource={rooms}
         columns={columns}
         pagination={{ pageSize: 10 }}
-        scroll={{ x: 800 }} // Enables horizontal scrolling for smaller screens
+        scroll={{ x: 800 }}
       />
     </div>
   );
 }
-
 export default RoomsTable;
