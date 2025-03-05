@@ -2,34 +2,50 @@
   "node": {
     "0ee18520c0d94a99da1e5944f4fdf45f92e0c15a": {
       "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!"
+        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!",
+        "app/sign-in/[[...sign-in]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!",
+        "app/admin/reports/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/page": "rsc"
+        "app/page": "rsc",
+        "app/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/admin/reports/page": "action-browser"
       }
     },
     "2296cdb73802aff7c87f29a52fa8e8517b7f60bf": {
       "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!"
+        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!",
+        "app/sign-in/[[...sign-in]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!",
+        "app/admin/reports/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/page": "rsc"
+        "app/page": "rsc",
+        "app/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/admin/reports/page": "action-browser"
       }
     },
     "34f16ef0a41521f3c8e5dea2543fe6842882d73e": {
       "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!"
+        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!",
+        "app/sign-in/[[...sign-in]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!",
+        "app/admin/reports/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/page": "rsc"
+        "app/page": "rsc",
+        "app/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/admin/reports/page": "action-browser"
       }
     },
     "a57257e3ec8754a25eb644c689d3c89335397e9b": {
       "workers": {
-        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!"
+        "app/page": "(rsc)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cbookings.ts%22%2C%5B%22%24%24ACTION_2%22%2C%22%24%24ACTION_1%22%2C%22GetAvailabeRooms%22%2C%22%24%24ACTION_0%22%2C%22CheckRoomAvailability%22%2C%22BookRoom%22%2C%22CancelBooking%22%2C%22%24%24ACTION_3%22%5D%5D%5D&__client_imported__=!",
+        "app/sign-in/[[...sign-in]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!",
+        "app/admin/reports/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/page": "rsc"
+        "app/page": "rsc",
+        "app/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/admin/reports/page": "action-browser"
       }
     },
     "0dbd8dc25c3b7fe463d37d122589bcc992d5cfbe": {
@@ -98,13 +114,17 @@
     },
     "63a09dd6aab041f2ef342e566db3243382de357d": {
       "workers": {
-        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!"
+        "app/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%5D&__client_imported__=true!",
+        "app/sign-in/[[...sign-in]]/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!",
+        "app/admin/reports/page": "(action-browser)/./node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Cnode_modules%5C%5C%40clerk%5C%5Cnextjs%5C%5Cdist%5C%5Cesm%5C%5Capp-router%5C%5Cserver-actions.js%22%2C%5B%22invalidateCacheAction%22%5D%5D%2C%5B%22C%3A%5C%5CUsers%5C%5CAkash%5C%5COneDrive%5C%5CDesktop%5C%5CAKASH_FYCS_54%5C%5Cwanderlust%5C%5Csrc%5C%5Cserver-actions%5C%5Cusers.ts%22%2C%5B%22UpdateUserRole%22%2C%22%24%24ACTION_0%22%2C%22%24%24ACTION_1%22%2C%22GetCurrentUserFromMongoDB%22%5D%5D%5D&__client_imported__=true!"
       },
       "layer": {
-        "app/page": "action-browser"
+        "app/page": "action-browser",
+        "app/sign-in/[[...sign-in]]/page": "action-browser",
+        "app/admin/reports/page": "action-browser"
       }
     }
   },
   "edge": {},
-  "encryptionKey": "ai+iNzq5CR7O7XcEc+XMndWNkpqwy0es0BIWr5LQOYs="
+  "encryptionKey": "4rqbbCY1FxbLDBs4kBycZMBFa37BfnftmMFjosyUMcE="
 }

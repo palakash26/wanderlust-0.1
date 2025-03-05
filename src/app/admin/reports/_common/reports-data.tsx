@@ -13,10 +13,10 @@ async function ReportsData({ searchParams }: { searchParams: any }) {
   const response = await BookingModel.find({
     bookingStatus: "Booked",
     createdAt: {
-      // $gte: dayjs(searchParams.startDate).startOf("day").toDate(),
-      // $lte: dayjs(searchParams.endDate).endOf("day").toDate(),
-      $gte: searchParams.startDate,
-      $lte: searchParams.endDate,
+      $gte: dayjs(searchParams.startDate).startOf("day").toDate(),
+      $lte: dayjs(searchParams.endDate).endOf("day").toDate(),
+      // $gte: searchParams.startDate,
+      // $lte: searchParams.endDate,
     },
   }).populate("room").populate("user").populate("hotel");
 
