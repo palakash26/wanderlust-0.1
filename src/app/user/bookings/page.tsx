@@ -1,3 +1,4 @@
+import { connectMongoDB } from "@/config/db";
 import { GetCurrentUserFromMongoDB } from "@/server-actions/users";
 import BookingModel from "@/models/booking-model";
 import React from "react";
@@ -5,18 +6,21 @@ import PageTitle from "@/components/page-title";
 import UserBookingsTable from "./_common/user-bookings-table";
 
 async function BookingsPage() {
-  try{
-  const userResponse = await GetCurrentUserFromMongoDB();
-  if (!userResponse?.data?._id) {
-    throw new Error("User ID not found");
-  }
-  const userBookingsResponse = await BookingModel.find({
-    user: userResponse.data._id,
-  })
-    .populate("room")
-    .populate("hotel")
-    .sort({ createdAt: -1 });
-  const userBookings = JSON.parse(JSON.stringify(userBookingsResponse));
+  try {
+    await connectMongoDB();
+    const userResponse = await GetCurrentUserFromMongoDB();
+    if (!userResponse?.data?._id) {
+      throw new Error("User ID not found");
+    }
+    const userBookingsResponse = await BookingModel.find({
+      user: userResponse.data._id,
+    })
+      .populate("room")
+      .populate("hotel")
+      .sort({ createdAt: -1 })
+      .lean();
+    const userBookings = JSON.parse(JSON.stringify(userBookingsResponse));
+
   return (
     <div>
       <PageTitle title="My Bookings" />

@@ -8,11 +8,10 @@ import { GetAvailabeRooms } from "@/server-actions/bookings";
 import { Carousel } from "antd";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
+import RoomCardImage from "@/components/room-card-image";
+
 async function RoomsData({ searchParams }: { searchParams: any }) {
   await dbConnect();
-
-  const hotels = await HotelModel.find();
-  console.log(hotels);
 
   console.log("Search Params:", searchParams);
 
@@ -26,61 +25,46 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
 
   const rooms: RoomType[] = response.data;
   
-  if (rooms.length === 0) {
+  if (!rooms || rooms.length === 0) {
     return <div>No rooms found</div>;
   }
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7  ">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {rooms.map((room: RoomType) => (
         <Link
-        href={`book-room/${room._id}`}
+          href={`book-room/${room._id}`}
           key={room._id}
-          className="no-underline text-black">
-          <div className=" flex flex-col gap-2 border border-gray-200 border-solid rounded-t-lg room-card">
-            {/* <img
-              src={room.media[0]}
-              className="w-full h-64 object-cover rounded-t-lg" /> */}
-                <Carousel 
-              arrows
-              
-              prevArrow={
-                <button
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  
-                </button>
-              }
-              nextArrow={
-                <button
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black text-white p-2 rounded-full z-10 opacity-0 group-hover:opacity-100 transition-opacity"
-                >
-                  
-                </button>
-              }
-            >
-              {room.media.map((image, index) => (
-                <img
-                  key={index}
-                  src={image}
-                  alt={`Room ${index}`}
-                  className="w-full h-64 object-cover rounded-t-lg"
-                />
-              ))}
-            </Carousel>
-            <div className="px-3 py-2 flex flex-col text-sm  gap-2">
-              <span> {room.name}</span>
-              <span className="text-teal-500 text-xs">
-                {room.hotel
-                  // ? `${room.hotel.name} - ${room.hotel.address}`
-                  ? `${room.hotel.name || "Hotel name missing"} - ${room.hotel.address || "Address missing"
-                  }`
-                  : "Hotel information not available"}
+          className="no-underline text-black group flex flex-col h-full"
+        >
+          <div className="flex flex-col flex-1 border border-gray-200 rounded-2xl bg-white room-card overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+            <RoomCardImage media={room.media} roomName={room.name} />
+            <div className="p-4 flex flex-col flex-1 justify-between gap-3">
+              <div className="flex flex-col gap-1.5">
+                <span className="font-bold text-gray-900 text-lg group-hover:text-teal-600 transition-colors line-clamp-1">
+                  {room.name}
+                </span>
+                <span className="text-teal-600 text-xs font-medium line-clamp-2 min-h-[2.5rem]">
+                  {room.hotel && (room.hotel.name || room.hotel.address)
+                    ? `${room.hotel.name || "Boutique Hotel"} - ${
+                        room.hotel.address || "Prime Location"
+                      }`
+                    : "Tripora Deluxe Resort"}
 
-                {/* {room.hotel.name} - {room.hotel.address} */}
-              </span>
-              <hr className="border-gray-200 border border-solid" />
-              <div className="flex justify-between ">
-                <span> ₹{room.rentPerDay} /Per Day</span>
+                </span>
+              </div>
+              <div className="flex flex-col gap-3">
+                <hr className="border-gray-100 border-t" />
+                <div className="flex justify-between items-center font-bold text-slate-800">
+                  <span className="text-base">
+                    ₹{room.rentPerDay}{" "}
+                    <span className="text-xs font-normal text-gray-500">
+                      / Per Day
+                    </span>
+                  </span>
+                  <span className="text-xs bg-teal-50 text-teal-700 font-semibold px-3 py-1 rounded-full border border-teal-100 group-hover:bg-teal-500 group-hover:text-white transition-all">
+                    View Details →
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -89,6 +73,7 @@ async function RoomsData({ searchParams }: { searchParams: any }) {
     </div>
   );
 }
+
 export default RoomsData;
 
 

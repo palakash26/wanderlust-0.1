@@ -1,47 +1,33 @@
 import PageTitle from "@/components/page-title";
+import UserProfileCard from "@/components/user-profile-card";
 import BookingModel from "@/models/booking-model";
 import { GetCurrentUserFromMongoDB } from "@/server-actions/users";
-import dayjs from "dayjs";
+import { connectMongoDB } from "@/config/db";
 import React from "react";
 
-import { motion } from "framer-motion";
-
 async function ProfilePage() {
+  await connectMongoDB();
   const response = await GetCurrentUserFromMongoDB();
-  const user = JSON.parse(JSON.stringify(response.data));
-
-  const bookingsCount = await BookingModel.countDocuments({ user: user._id });
-
-  const renderUserProperty = (label: String, value: string) => {
+  if (!response.success || !response.data) {
     return (
-      <div className="flex flex-col gap-1 text-gray-600">
-        <span className="text-xs">{label}:</span>
-        <span className="text-sm font-semibold">{value}</span>
+      <div>
+        <PageTitle title="Profile" />
+        <p className="mt-4 text-red-500">{response.message || "Failed to load user profile."}</p>
       </div>
     );
-  };
+  }
+  const user = response.data;
+  const bookingsCount = await BookingModel.countDocuments({ user: user._id });
 
-  //user role
-  const userRole = user.isAdmin ? "Admin" : user.isSubAdmin ? "Sub-admin" : "User";
   return (
     <div>
-      <PageTitle title="Profile" />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-4">
-        {renderUserProperty("Name", user.name)}
-        {renderUserProperty("Email", user.email)}
-        {renderUserProperty("User Id", user._id)}
-        {renderUserProperty("Role", userRole)}
-        {renderUserProperty(
-          "Joined At",
-          dayjs(user.createAt).format("MMM DD, YYYY hh:mm A")
-        )}
-        {renderUserProperty("Total Bookings", bookingsCount.toString())}
-      </div>
-
+      <PageTitle title="Sub-Admin Profile" />
+      <UserProfileCard user={user} bookingsCount={bookingsCount} />
     </div>
   );
 }
 
 export default ProfilePage;
+
 
 

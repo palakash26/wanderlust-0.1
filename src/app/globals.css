@@ -10,16 +10,18 @@
 }
 
 .auth-container {
-  background-color: aliceblue;
-  height: 118vh;
+  background-color: #f8fafc;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 2rem 1rem;
 }
 
 .auth-only {
-  height: 100vh;
+  min-height: 100vh;
 }
+
 
 /* Add this to your global CSS file or component CSS module */
 .cl-internal-1dauvpw,

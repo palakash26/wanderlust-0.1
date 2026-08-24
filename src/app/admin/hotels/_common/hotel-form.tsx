@@ -5,6 +5,9 @@ import { Button, Form, Input, message, Upload } from "antd";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
+const DEFAULT_ROOM_IMAGE =
+  "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80";
+
 function HotelForm({
   type = "add",
   initialData,
@@ -107,9 +110,12 @@ function HotelForm({
               style={{ minWidth: "112px" }}
             >
               <img
-                src={media}
+                src={media || DEFAULT_ROOM_IMAGE}
                 alt="media"
-                className="h-20 w-20 sm:h-16 sm:w-16 md:h-20 md:w-20 object-cover"
+                className="h-20 w-20 sm:h-16 sm:w-16 md:h-20 md:w-20 object-cover rounded"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = DEFAULT_ROOM_IMAGE;
+                }}
               />
               <div
                 className="text-teal-500 underline text-sm cursor-pointer"

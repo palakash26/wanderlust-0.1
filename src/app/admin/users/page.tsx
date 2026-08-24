@@ -1,3 +1,4 @@
+import { connectMongoDB } from "@/config/db";
 import PageTitle from "@/components/page-title";
 import UserModel from "@/models/user-models";
 import React from "react";
@@ -6,7 +7,8 @@ import UsersTable from "./_common/users-table";
 
 
 async function UsersPage() {
-  const response = await UserModel.find().sort({ createdAt: -1 });
+  await connectMongoDB();
+  const response = await UserModel.find().sort({ createdAt: -1 }).lean();
   const users = JSON.parse(JSON.stringify(response));
   return (
     <div>

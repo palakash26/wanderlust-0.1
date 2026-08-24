@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="tripora-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#0d9488" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  <rect width="128" height="128" rx="28" fill="url(#tripora-grad)" />
+  <circle cx="64" cy="64" r="42" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.3"/>
+  <!-- Compass Needle -->
+  <polygon points="64,28 76,64 64,100 52,64" fill="#ffffff" filter="url(#shadow)"/>
+  <polygon points="64,28 76,64 64,64" fill="#ccfbf1"/>
+  <circle cx="64" cy="64" r="7" fill="#0d9488" stroke="#ffffff" stroke-width="3"/>
+</svg>

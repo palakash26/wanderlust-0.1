@@ -1,10 +1,12 @@
+import { connectMongoDB } from "@/config/db";
 import PageTitle from "@/components/page-title";
 import React from "react";
 import RoomsForm from "../_common/rooms-form";
 import HotelModel from "@/models/hotel-model";
 
 async function AddRoomPage() {
-  const response = await HotelModel.find();
+  await connectMongoDB();
+  const response = await HotelModel.find().lean();
   const hotels = JSON.parse(JSON.stringify(response));
 
   return (
@@ -15,4 +17,4 @@ async function AddRoomPage() {
   );
 }
 
-export default AddRoomPage;
+export default AddRoomPage;

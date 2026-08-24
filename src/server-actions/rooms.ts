@@ -3,10 +3,10 @@
 import { connectMongoDB } from "@/config/db";
 import RoomModel from "@/models/room-model";
 import { revalidatePath } from "next/cache";
-connectMongoDB();
 
 export const AddRoom = async (payload: any) => {
   try {
+    await connectMongoDB();
     const newRoom = new RoomModel(payload);
     await newRoom.save();
     revalidatePath("/admin/rooms");
@@ -22,6 +22,7 @@ export const AddRoom = async (payload: any) => {
   }
 };
 
+
 export const EditRoom = async ({
   roomId,
   payload,
@@ -30,6 +31,7 @@ export const EditRoom = async ({
   payload: any;
 }) => {
   try {
+    await connectMongoDB();
     await RoomModel.findByIdAndUpdate(roomId, payload);
     revalidatePath("/admin/rooms");
     return {
@@ -46,6 +48,7 @@ export const EditRoom = async ({
 
 export const DeleteRoom = async (roomId: string) => {
   try {
+    await connectMongoDB();
     await RoomModel.findByIdAndDelete(roomId);
     revalidatePath("/admin/rooms");
     return {
@@ -59,3 +62,4 @@ export const DeleteRoom = async (roomId: string) => {
     };
   }
 };
+

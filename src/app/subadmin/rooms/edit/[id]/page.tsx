@@ -1,3 +1,4 @@
+import { connectMongoDB } from "@/config/db";
 import PageTitle from "@/components/page-title";
 import HotelModel from "@/models/hotel-model";
 import RoomModel from "@/models/room-model";
@@ -11,11 +12,15 @@ async function EditRoomPage({
     id: string;
   };
 }) {
-  const response = await RoomModel.findById(params.id);
-  const room = JSON.parse(JSON.stringify(response));
+  await connectMongoDB();
+  const [response, hotelsResponse] = await Promise.all([
+    RoomModel.findById(params.id).lean(),
+    HotelModel.find().lean(),
+  ]);
 
-  const hotelsReponse = await HotelModel.find();
-  const hotels = JSON.parse(JSON.stringify(hotelsReponse));
+  const room = JSON.parse(JSON.stringify(response));
+  const hotels = JSON.parse(JSON.stringify(hotelsResponse));
+
   return (
     <div>
       <PageTitle title="Edit Rooms" />
@@ -25,3 +30,4 @@ async function EditRoomPage({
 }
 
 export default EditRoomPage;
+

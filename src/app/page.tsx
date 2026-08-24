@@ -5,31 +5,26 @@
 // };
 
 import { connectMongoDB } from "@/config/db";
-// import { UserType } from "@/interfaces";
-import { GetCurrentUserFromMongoDB } from "@/server-actions/users";
 import RoomsData from "./_common/rooms-data";
 import { Suspense } from "react";
-import Spinner from "@/components/spinner";
+import { RoomSkeletonGrid } from "@/components/skeleton";
 import Filters from "./_common/filters";
-// import { UserButton } from "@clerk/nextjs";
-
-connectMongoDB();
 
 export default async function Home({ searchParams }: { searchParams: any }) {
-  await GetCurrentUserFromMongoDB();
-
-  const supenseKey = JSON.stringify(searchParams);
-  console.log(searchParams);
+  await connectMongoDB();
+  const suspenseKey = JSON.stringify(searchParams);
 
   return (
     <div className="mb-5">
       <Filters searchParams={searchParams} />
-      <Suspense fallback={<Spinner fullHeight />} key={supenseKey}>
+      <Suspense fallback={<RoomSkeletonGrid count={6} />} key={suspenseKey}>
         <RoomsData searchParams={searchParams} />
       </Suspense>
     </div>
   );
 }
+
+
 
 // // Initialize variables
 // let mongoUserId = "";

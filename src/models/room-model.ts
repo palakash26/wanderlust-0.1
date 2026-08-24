@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
+import "./hotel-model";
 
 const roomSchema = new mongoose.Schema(
   {
     hotel: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "hotels",
-      // ref:"Hotel",
       required: true,
+      index: true,
     },
     name: {
       type: String,
@@ -15,10 +16,11 @@ const roomSchema = new mongoose.Schema(
     type: {
       type: String,
       required: true,
+      index: true,
     },
     rentPerDay: {
       type: Number,
-      required:true,
+      required: true,
     },
     amenities: {
       type: String,
@@ -32,23 +34,15 @@ const roomSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    media:{
-      type:[String],
-      required:true
-    }
+    media: {
+      type: [String],
+      required: true,
+    },
   },
   {
     timestamps: true,
   }
 );
 
-if (mongoose.models && mongoose.models["rooms"]) {
-  delete mongoose.models["rooms"];
-}
-
-const RoomModel = mongoose.model("rooms", roomSchema);
-export default RoomModel;
-
-// const RoomModel = mongoose.models.Room || mongoose.model("Room", roomSchema);
-
-// export default RoomModel;
+const RoomModel = mongoose.models.rooms || mongoose.model("rooms", roomSchema);
+export default RoomModel;

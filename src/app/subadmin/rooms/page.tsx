@@ -1,12 +1,15 @@
+import { connectMongoDB } from "@/config/db";
 import LinkButton from "@/components/link-button";
 import PageTitle from "@/components/page-title";
 import RoomModel from "@/models/room-model";
 import React from "react";
 import RoomsTable from "./_common/rooms-table";
 
- async function RoomsPage() {
-  const response = await RoomModel.find().populate('hotel').sort({createdAt: -1})
+async function RoomsPage() {
+  await connectMongoDB();
+  const response = await RoomModel.find().populate("hotel").sort({ createdAt: -1 }).lean();
   const rooms = JSON.parse(JSON.stringify(response));
+
   return (
     <div>
     <div className="flex justify-between items-center">

@@ -4,31 +4,34 @@ const userSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      require: true,
+      required: true,
     },
     email: {
       type: String,
-      require: true,
+      required: true,
     },
     clerkUserId: {
       type: String,
-      require: true,
+      required: true,
+      index: true,
     },
     profilePic: {
       type: String,
-      require: true,
+      required: true,
     },
     isActive: {
       type: Boolean,
-      require: true,
+      required: true,
+      default: true,
     },
     isAdmin: {
       type: Boolean,
-      require: true,
+      required: true,
+      default: false,
     },
-    isSubAdmin: { // Add isSubAdmin
+    isSubAdmin: {
       type: Boolean,
-      require: true,
+      required: true,
       default: false,
     },
   },
@@ -37,8 +40,6 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-if (mongoose.models && mongoose.models["users"]) {
-  delete mongoose.models["users"];
-}
-const UserModel = mongoose.model("users", userSchema);
+const UserModel = mongoose.models.users || mongoose.model("users", userSchema);
 export default UserModel;
+

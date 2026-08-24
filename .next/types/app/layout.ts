@@ -1,4 +1,4 @@
-// File: C:\Users\Akash\OneDrive\Desktop\AKASH_FYCS_54\wanderlust\src\app\layout.tsx
+// File: C:\Users\pala6\OneDrive\Desktop\AKASH_FYCS_54\hotel_booking\wanderlust-0.1\src\app\layout.tsx
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

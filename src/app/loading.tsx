@@ -1,9 +1,10 @@
 
-import Spinner from "@/components/spinner";
+import PageSkeleton from "@/components/skeleton";
 import React from "react";
 
 function Loading() {
-  return <Spinner fullHeight />;
+  return <PageSkeleton />;
 }
 
 export default Loading;
+

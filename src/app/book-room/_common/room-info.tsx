@@ -2,6 +2,9 @@ import { RoomType } from "@/interfaces";
 import { Image } from "antd";
 import React from "react";
 
+const DEFAULT_ROOM_IMAGE =
+  "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80";
+
 function RoomInfo({ room }: { room: RoomType }) {
   const renderRoomProperty = (label: String, value: string) => {
     return (
@@ -12,16 +15,20 @@ function RoomInfo({ room }: { room: RoomType }) {
     );
   };
 
+  const mediaList =
+    room.media && room.media.length > 0 ? room.media : [DEFAULT_ROOM_IMAGE];
+
   return (
     <div className="mb-7">
       <div className="flex flex-wrap gap-7">
-        {room.media.map((media, index) => (
+        {mediaList.map((media, index) => (
           <Image
-            src={media}
+            src={media || DEFAULT_ROOM_IMAGE}
             key={index}
             width={200}
             height={170}
-            className="rounded-lg"
+            className="rounded-lg object-cover"
+            fallback={DEFAULT_ROOM_IMAGE}
           />
         ))}
       </div>

@@ -1,42 +1,48 @@
 "use server";
 
-import { currentUser } from "@clerk/nextjs/server";
+import { auth, currentUser } from "@clerk/nextjs/server";
 import UserModel from "@/models/user-models";
 import { connectMongoDB } from "@/config/db";
-import { message } from "antd";
-import { revalidatePath } from "next/cache";
-
-connectMongoDB();
 
 export const GetCurrentUserFromMongoDB = async () => {
   try {
-    const currentUserFromClerk = await currentUser();
+    await connectMongoDB();
+    const { userId } = await auth();
 
-    if (!currentUserFromClerk) {
+    if (!userId) {
       return { success: false, message: "No current user found" };
     }
 
-    // check if user exists in the database
-    const user = await UserModel.findOne({
-      clerkUserId: currentUserFromClerk?.id,
-    });
+    // Check if user exists in MongoDB using lean query (fastest)
+    const user = await UserModel.findOne({ clerkUserId: userId }).lean();
 
-    // if user does not exits in the database create a new user and return user data
-    if (!user) {
-      // Create a new user only if they do not already exist
-      const newUser = new UserModel({
-        name: `${currentUserFromClerk.firstName} ${currentUserFromClerk.lastName}`,
-        clerkUserId: currentUserFromClerk.id,
-        email: currentUserFromClerk.emailAddresses[0].emailAddress,
-        profilePic: currentUserFromClerk.imageUrl,
-        isAdmin: false,
-        isActive: true,
-      });
-      await newUser.save();
+    if (user) {
+      return {
+        success: true,
+        data: JSON.parse(JSON.stringify(user)),
+      };
     }
+
+    // Only if user does not exist in DB yet, fetch full details from Clerk API
+    const currentUserFromClerk = await currentUser();
+    if (!currentUserFromClerk) {
+      return { success: false, message: "No current user found in Clerk" };
+    }
+
+    const newUser = new UserModel({
+      name: `${currentUserFromClerk.firstName || ""} ${currentUserFromClerk.lastName || ""}`.trim() || "User",
+      clerkUserId: currentUserFromClerk.id,
+      email: currentUserFromClerk.emailAddresses[0]?.emailAddress || "",
+      profilePic: currentUserFromClerk.imageUrl || "",
+      isAdmin: false,
+      isSubAdmin: false,
+      isActive: true,
+    });
+    await newUser.save();
+
     return {
       success: true,
-      data: JSON.parse(JSON.stringify(user)),
+      data: JSON.parse(JSON.stringify(newUser.toObject())),
     };
   } catch (error) {
     return {
@@ -46,6 +52,7 @@ export const GetCurrentUserFromMongoDB = async () => {
     };
   }
 };
+
 
 // export const UpdateUserRole = async (userId: string, isAdmin: boolean) => {
 //   try {

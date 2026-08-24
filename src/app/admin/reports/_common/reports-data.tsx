@@ -6,22 +6,21 @@ import dbConnect from "@/utils/dbConnect";
 
 async function ReportsData({ searchParams }: { searchParams: any }) {
   await dbConnect();
-  const room = await BookingModel.find();
-  console.log(room);
-
 
   const response = await BookingModel.find({
     bookingStatus: "Booked",
     createdAt: {
       $gte: dayjs(searchParams.startDate).startOf("day").toDate(),
       $lte: dayjs(searchParams.endDate).endOf("day").toDate(),
-      // $gte: searchParams.startDate,
-      // $lte: searchParams.endDate,
     },
-  }).populate("room").populate("user").populate("hotel");
+  })
+    .populate("room")
+    .populate("user")
+    .populate("hotel")
+    .lean();
 
-  console.log("response", JSON.parse(JSON.stringify(response)));
   const bookings = JSON.parse(JSON.stringify(response));
+
   console.log("Bookings", bookings);
 
   const totalBookings = bookings.length;

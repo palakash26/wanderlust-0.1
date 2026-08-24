@@ -8,7 +8,8 @@ export const GetStripeClientSecretKey = async({amount}:{
         const paymentIntent = await stripe.paymentIntents.create({
             amount: amount * 100,
             currency: 'usd',
-            description : "Wanderlust - Room Booking Payment",
+            description : "Tripora - Room Booking Payment",
+
           });
 
           return{

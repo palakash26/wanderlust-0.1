@@ -2,13 +2,11 @@
 
 import { connectMongoDB } from "@/config/db";
 import HotelModel from "@/models/hotel-model";
-import { message } from "antd";
 import { revalidatePath } from "next/cache";
-
-connectMongoDB();
 
 export const AddHotel = async (payload: any) => {
   try {
+    await connectMongoDB();
     const newHotel = new HotelModel(payload);
     await newHotel.save();
     revalidatePath("/admin/hotels");
@@ -32,6 +30,7 @@ export const EditHotel = async ({
   payload: any;
 }) => {
   try {
+    await connectMongoDB();
     await HotelModel.findByIdAndUpdate(hotelId, payload);
     revalidatePath("/admin/hotels");
     return {
@@ -48,6 +47,7 @@ export const EditHotel = async ({
 
 export const DeleteHotel = async (hotelId: string) => {
   try {
+    await connectMongoDB();
     await HotelModel.findByIdAndDelete(hotelId);
     revalidatePath("/admin/hotels");
     return {
@@ -61,3 +61,4 @@ export const DeleteHotel = async (hotelId: string) => {
     };
   }
 };
+

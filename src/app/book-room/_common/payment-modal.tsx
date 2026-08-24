@@ -63,13 +63,18 @@ function PaymentModal({
           paymentId:result.paymentIntent.id,
         };
 
-        await BookRoom(bookingPayload);
-        message.success("Room booked successfully");
-        setShowPaymentModal(false);
-        router.push("/user/bookings");
+        const response = await BookRoom(bookingPayload);
+        if (response.success) {
+          message.success("Room booked successfully! Redirecting to your bookings...");
+          setShowPaymentModal(false);
+          router.push("/user/bookings");
+          router.refresh();
+        } else {
+          message.error(response.message || "Failed to complete room booking.");
+        }
       }
     } catch (error: any) {
-      message.error(error.message);
+      message.error(error.message || "An unexpected error occurred during booking.");
     } finally {
       setLoading(false);
     }

@@ -1,3 +1,4 @@
+import { connectMongoDB } from "@/config/db";
 import { RoomType } from "@/interfaces";
 import RoomModel from "@/models/room-model";
 import React from "react";
@@ -11,9 +12,10 @@ async function BookRoomPage({
     id: string;
   };
 }) {
-  // const response = await RoomModel.findById(params.id).populate("hotel");
-  const response = await RoomModel.findById(params.id).populate("hotel");
+  await connectMongoDB();
+  const response = await RoomModel.findById(params.id).populate("hotel").lean();
   const room: RoomType = JSON.parse(JSON.stringify(response));
+
   return (
     <div>
       <div>

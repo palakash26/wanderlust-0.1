@@ -2,15 +2,11 @@
 
 import { connectMongoDB } from "@/config/db";
 import BookingModel from "@/models/booking-model";
-import { message } from "antd";
 import { GetCurrentUserFromMongoDB } from "./users";
 import { revalidatePath } from "next/cache";
 import RoomModel from "@/models/room-model";
-// import { message } from "antd";
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-
-connectMongoDB();
 
 export const CheckRoomAvailability = async ({
   roomId,
@@ -22,10 +18,9 @@ export const CheckRoomAvailability = async ({
   reqCheckOutDate: string;
 }) => {
   try {
-    // Get the current date in 'YYYY-MM-DD' format
+    await connectMongoDB();
     const currentDate = new Date().toISOString().split("T")[0];
 
-    // Ensure requested check-in date is not in the past
     if (reqCheckInDate < currentDate) {
       return {
         success: false,
@@ -55,7 +50,7 @@ export const CheckRoomAvailability = async ({
           ],
         },
       ],
-    });
+    }).lean();
 
     if (bookedSlot) {
       return {
@@ -76,7 +71,11 @@ export const CheckRoomAvailability = async ({
 
 export const BookRoom = async (payload: any) => {
   try {
+    await connectMongoDB();
     const userResponse = await GetCurrentUserFromMongoDB();
+    if (!userResponse.success || !userResponse.data) {
+      return { success: false, message: "User not authenticated" };
+    }
     payload.user = userResponse.data._id;
     const booking = new BookingModel(payload);
     await booking.save();
@@ -101,11 +100,10 @@ export const CancelBooking = async ({
   paymentId: string;
 }) => {
   try {
-    // change the status of the booking to cancelled
+    await connectMongoDB();
     await BookingModel.findByIdAndUpdate(bookingId, {
       bookingStatus: "Cancelled",
     });
-    // refund the payement
 
     const refund = await stripe.refunds.create({
       payment_intent: paymentId,
@@ -143,11 +141,13 @@ export const GetAvailabeRooms = async ({
   type: string;
 }) => {
   try {
-    // if checkIn date or checkout date is not valid return data only with type filter
+    await connectMongoDB();
     if (!reqCheckInDate || !reqCheckOutDate) {
       const rooms = await RoomModel.find({
         ...(type && { type }),
-      });
+      })
+        .populate("hotel")
+        .lean();
 
       return {
         success: true,
@@ -155,13 +155,6 @@ export const GetAvailabeRooms = async ({
       };
     }
 
-    console.log(
-      "CheckInDate:",
-      reqCheckInDate,
-      "CheckOutDate:",
-      reqCheckOutDate
-    );
-    // first get all the rooms which are booked in the given date range
     const bookedSlots = await BookingModel.find({
       bookingStatus: "Booked",
       $or: [
@@ -184,16 +177,18 @@ export const GetAvailabeRooms = async ({
           ],
         },
       ],
-    });
-    console.log("Booked Slots:", bookedSlots);
-    const bookedRoomIds = bookedSlots.map((slot) => slot.room);
+    })
+      .select("room")
+      .lean();
 
-    // get all the rooms by excluding the booked rooms
+    const bookedRoomIds = bookedSlots.map((slot) => slot.room);
 
     const rooms = await RoomModel.find({
       _id: { $nin: bookedRoomIds },
       ...(type && { type }),
-    });
+    })
+      .populate("hotel")
+      .lean();
 
     return {
       success: true,
@@ -206,6 +201,7 @@ export const GetAvailabeRooms = async ({
     };
   }
 };
+
 
 // export const GetAvailabeRooms = async ({
 //   reqCheckInDate,
