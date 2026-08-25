@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {},
   webpack: (config, { dev }) => {
     // Disable persistent disk cache in dev mode to prevent stale .next chunk errors on Windows
     if (dev) {
