@@ -6,7 +6,10 @@ export default authMiddleware({
   publicRoutes: [
     "/((?!api|trpc))(_next.*|.+\\.[\\w]+$)", // Default Clerk ignored routes
     "/", 
-    "/user/bookings",], // Add routes you want Clerk to ignore], // Specify public routes
+    "/user/bookings",
+    "/api/ping",
+    "/ping",
+  ],
 });
 export const config = {
   matcher: [

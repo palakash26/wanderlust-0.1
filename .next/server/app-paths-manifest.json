@@ -1,5 +1,0 @@
-{
-  "/subadmin/bookings/page": "app/subadmin/bookings/page.js",
-  "/book-room/[id]/page": "app/book-room/[id]/page.js",
-  "/user/bookings/page": "app/user/bookings/page.js"
-}
